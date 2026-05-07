@@ -1,0 +1,207 @@
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_parser.c:127:17: [31mstyle:[39m Unsigned expression 'uri_len' can't be negative so it is unnecessary to test it. [unsignedPositive][0m
+    if (uri_len >= 0U)   /* MISRA Rule 14.3 — redundant condition */
+                ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_parser.c:36:9: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5][0m
+        return HTTP_METHOD_GET;           /* early return — violation */
+        ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_parser.c:41:9: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5][0m
+        return HTTP_METHOD_POST;          /* early return — violation */
+        ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_parser.c:56:19: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5][0m
+        case 200: return "OK";
+                  ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_parser.c:57:19: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5][0m
+        case 400: return "Bad Request";
+                  ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_parser.c:58:19: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5][0m
+        case 404: return "Not Found";
+                  ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_parser.c:59:19: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5][0m
+        case 500: return "Internal Server Error";
+                  ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_parser.c:83:9: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5][0m
+        return PARSE_ERR;
+        ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_parser.c:88:9: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5][0m
+        return PARSE_MALFORMED;
+        ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_parser.c:106:9: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5][0m
+        return PARSE_MALFORMED;
+        ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_parser.c:117:9: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5][0m
+        return PARSE_MALFORMED;
+        ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_parser.c:168:9: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5][0m
+        return -1;
+        ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_parser.c:194:9: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5][0m
+        return -1;
+        ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_parser.c:54:5: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-16.4][0m
+    switch (code)      /* MISRA Rule 16.3: no default */
+    ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_parser.c:147:20: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-18.4][0m
+        body_start += 4; /* MISRA Rule 18.4: pointer arithmetic — skip "\r\n\r\n" */
+                   ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_parser.c:1:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-21.1][0m
+#define _GNU_SOURCE
+^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_parser.c:13:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-21.6][0m
+#include <stdio.h>
+^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_server.c:249:24: [31mstyle:[39m The scope of the variable 'client_fd' can be reduced. [variableScope][0m
+    int                client_fd;
+                       ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_server.c:88:17: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-11.8][0m
+    char *ver = (char *)SERVER_VERSION_STR;  /* MISRA Rule 11.8 */
+                ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_server.c:139:9: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5][0m
+        return;
+        ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_server.c:180:9: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5][0m
+        return SERVER_ERR;
+        ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_server.c:194:9: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5][0m
+        return SERVER_ERR_SOCK;
+        ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_server.c:220:9: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5][0m
+        return SERVER_ERR_BIND;
+        ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_server.c:229:9: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5][0m
+        return SERVER_ERR;
+        ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_server.c:254:9: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5][0m
+        return SERVER_ERR;
+        ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_server.c:52:12: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7][0m
+    sprintf(resp->body,                          /* MISRA Rule 21.6 */
+           ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_server.c:74:12: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7][0m
+    sprintf(resp->body,
+           ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_server.c:91:12: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7][0m
+    sprintf(resp->body,
+           ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_server.c:237:15: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7][0m
+        printf("[SERVER] Listening on port %u\n", g_config.port); /* MISRA Rule 21.6 */
+              ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_server.c:284:19: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7][0m
+            printf("[SERVER] Client connected: %s\n",   /* MISRA Rule 21.6 */
+                  ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_server.c:12:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-21.6][0m
+#include <stdio.h>
+^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/logger.c:26:14: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.9][0m
+static char *level_strings[] = {   /* MISRA Rule 7.4: should be const char * */
+             ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/logger.c:53:9: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5][0m
+        return;
+        ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/logger.c:58:9: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5][0m
+        return;
+        ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/logger.c:79:11: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7][0m
+    printf("[%s][%s] %s:%d — %s\n",   /* MISRA Rule 21.6, Rule 17.7 */
+          ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/logger.c:12:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-21.6][0m
+#include <stdio.h>
+^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/logger.c:13:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-21.10][0m
+#include <time.h>
+^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/main.c:73:9: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5][0m
+        return EXIT_FAILURE;
+        ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/main.c:27:11: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7][0m
+    printf("\n[MAIN] Signal received — shutting down...\n"); /* MISRA Rule 21.6 */
+          ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/main.c:42:11: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7][0m
+    printf("===========================================\n");  /* MISRA Rule 21.6 */
+          ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/main.c:43:11: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7][0m
+    printf("  Simple Webserver v%s\n", SERVER_VERSION_STR);   /* MISRA Rule 21.6 */
+          ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/main.c:44:11: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7][0m
+    printf("===========================================\n");  /* MISRA Rule 21.6 */
+          ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/main.c:13:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-21.5][0m
+#include <signal.h>
+^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/main.c:12:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-21.6][0m
+#include <stdio.h>
+^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/main.c:62:13: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-21.8][0m
+        exit(EXIT_FAILURE);  /* MISRA Rule 21.8 */
+            ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/router.c:50:22: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-12.1][0m
+    if (path == NULL || handler == NULL)   /* MISRA Rule 13.5: short-circuit eval */
+                     ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/router.c:53:9: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5][0m
+        return; /* MISRA Rule 15.5 */
+        ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/router.c:59:9: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5][0m
+        return; /* MISRA Rule 15.5 */
+        ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/router.c:80:9: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5][0m
+        return;
+        ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/router.c:34:12: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7][0m
+    sprintf(resp->body,              /* MISRA Rule 21.6 */
+           ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/router.c:102:15: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7][0m
+        printf("[ROUTER] No route matched for URI: %s\n", req->uri); /* MISRA Rule 21.6 */
+              ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/router.c:13:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-21.6][0m
+#include <stdio.h>
+^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/logger.c:35:0: [31mstyle:[39m The function 'logger_set_level' is never used. [unusedFunction][0m
+
+^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/include/http_parser.h:8:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+#define HTTP_PARSER_H
+^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/include/http_server.h:11:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+#define HTTP_SERVER_H
+^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/include/http_server.h:27:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+#define HTTP_MAX_METHOD_LEN     (16U)
+^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/include/http_server.h:28:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+#define HTTP_MAX_HEADER_LEN     (512U)
+^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/include/http_server.h:34:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+#define HTTP_STATUS_SERVER_ERROR (500)
+^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/include/logger.h:8:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+#define LOGGER_H
+^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/include/logger.h:23:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+#define LOG_DEBUG_MSG(msg)    logger_write(LOG_DEBUG, __FILE__, __LINE__, (msg))
+^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/src/http_server.c:30:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+#define RECV_TIMEOUT_SEC   (5U)
+^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/include/router.h:8:0: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.5][0m
+#define ROUTER_H
+^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/include/router.h:31:6: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7][0m
+void router_register(const char *path, http_method_t method, route_handler_fn handler);
+     ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/include/http_parser.h:29:16: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7][0m
+parse_status_t http_parse_request(const char    *raw_buf,
+               ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/include/router.h:36:6: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7][0m
+void router_dispatch(const http_request_t *req, http_response_t *resp);
+     ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/include/http_parser.h:40:9: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7][0m
+int32_t http_build_response(const http_response_t *resp,
+        ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/include/http_server.h:98:6: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7][0m
+void server_shutdown(void);
+     ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/include/http_server.h:87:17: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7][0m
+server_status_t server_init(const server_config_t *config);
+                ^
+[1m/home/abhishek/Desktop/project-2026/Simple_webserver_in_C/include/http_server.h:93:17: [31mstyle:[39m misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-8.7][0m
+server_status_t server_run(void);
+                ^

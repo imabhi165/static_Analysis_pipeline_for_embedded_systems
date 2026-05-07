@@ -87,7 +87,7 @@ def generate_html_report(violations, repo_info, output_file):
         """
     
     if not table_rows:
-        table_rows = '<tr><td colspan="5" style="text-align: center;">✅ No MISRA violations found!</td></tr>'
+        table_rows = '<tr><td colspan="5" style="text-align: center;">No MISRA violations found!</td></tr>'
     
     # Determine status
     status = "PASS - No Violations" if total_count == 0 else f"FAIL - {total_count} Violations Found"
