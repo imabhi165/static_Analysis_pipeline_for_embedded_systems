@@ -23,10 +23,10 @@ cd build
 cmake ..
 make
 cd ..
-echo -e "${GREEN}✅ Build completed in build/${NC}"
+echo -e "${GREEN}Build completed in build/${NC}"
 
 # Step 2: Run cppcheck MISRA analysis (output in build/)
-echo -e "\n${YELLOW}🔍 Step 2: Running MISRA analysis with cppcheck...${NC}"
+echo -e "\n${YELLOW}Step 2: Running MISRA analysis with cppcheck...${NC}"
 cppcheck --enable=all \
          --inconclusive \
          --suppress=missingIncludeSystem \
@@ -36,7 +36,7 @@ cppcheck --enable=all \
          src/ 2> build/cppcheck_output.xml
 
 if [ -s build/cppcheck_output.xml ]; then
-    echo -e "${GREEN}✅ cppcheck analysis completed${NC}"
+    echo -e "${GREEN}cppcheck analysis completed${NC}"
     # Show summary
     VIOLATION_COUNT=$(grep -c "<error" build/cppcheck_output.xml || echo "0")
     echo "   Total violations found: $VIOLATION_COUNT"
@@ -49,22 +49,13 @@ fi
 # Step 3: Generate HTML report (output in build/)
 echo -e "\n${YELLOW}📄 Step 3: Generating HTML report...${NC}"
 
-# Set mock GitHub environment variables for local testing
-export GITHUB_REPOSITORY="local/test-repo"
-export GITHUB_SHA="$(git rev-parse HEAD 2>/dev/null || echo 'local-test')"
-export GITHUB_REF_NAME="$(git branch --show-current 2>/dev/null || echo 'local')"
-export GITHUB_RUN_NUMBER="1"
-export GITHUB_ACTOR="$(whoami)"
-export GITHUB_RUN_ID="local-$$"
-export PROJECT_NAME="Simple Webserver (Local Test)"
-
 # Change to build directory to run report generator
 cd build
 python3 ../scripts/generate_report.py
 cd ..
 
 if [ -f build/misra_report.html ]; then
-    echo -e "${GREEN}✅ HTML report generated: build/misra_report.html${NC}"
+    echo -e "${GREEN}HTML report generated: build/misra_report.html${NC}"
     # Show file size
     ls -lh build/misra_report.html
 else
@@ -83,7 +74,7 @@ fi
 
 if [ -n "$EMAILJS_SERVICE_ID" ] && [ -n "$EMAILJS_TEMPLATE_ID" ] && [ -n "$EMAILJS_USER_ID" ]; then
     echo "   Sending test email to: ${EMAILJS_RECIPIENT:-'not set'}"
-    
+
     # Extract top violations for email (using build/cppcheck_output.xml)
     cd build
     python3 << 'EOF' > violations_table.txt
@@ -96,7 +87,7 @@ try:
     tree = ET.parse('cppcheck_output.xml')
     root = tree.getroot()
     errors = root.findall('.//error')
-    
+
     if errors:
         for error in errors[:5]:  # Top 5 for email
             location = error.find('location')
@@ -104,27 +95,27 @@ try:
                 file_path = location.get('file', 'Unknown')
                 line_num = location.get('line', '?')
                 msg = error.get('msg', 'No message')
-                
+
                 rule = 'N/A'
                 misra_match = re.search(r'misra c[:\s]+(\d+\.\d+)', msg.lower())
                 if misra_match:
                     rule = misra_match.group(1)
-                
+
                 violations_html += f'<tr><td>{html.escape(rule)}</td><td>{html.escape(file_path)}</td><td>{line_num}</td><td>{html.escape(msg[:100])}</td></tr>'
-    
+
     with open('violations_table.txt', 'w') as f:
         f.write(violations_html if violations_html else '<tr><td colspan="4">No violations found</td></tr>')
 except Exception as e:
     with open('violations_table.txt', 'w') as f:
         f.write(f'<tr><td colspan="4">Error: {e}</td></tr>')
 EOF
-    
+
     VIOLATIONS_TABLE=$(cat violations_table.txt)
     cd ..
-    
+
     # Prepare status
     if [ ! -s build/cppcheck_output.xml ] || [ $(grep -c "<error" build/cppcheck_output.xml) -eq 0 ]; then
-        STATUS_TEXT="✅ PASS - No MISRA Violations"
+        STATUS_TEXT="PASS - No MISRA Violations"
         STATUS_CLASS="status-pass"
         TOTAL_VIOLATIONS="0"
     else
@@ -132,7 +123,7 @@ EOF
         STATUS_TEXT="⚠️ FAIL - ${TOTAL_VIOLATIONS} Violations Found"
         STATUS_CLASS="status-fail"
     fi
-    
+
     # Send test email
     RESPONSE=$(curl -s -w "\n%{http_code}" -X POST https://api.emailjs.com/api/v1.0/email/send \
       -H 'Content-Type: application/json' \
@@ -158,10 +149,10 @@ EOF
           \"to_email\": \"${EMAILJS_RECIPIENT}\"
         }
       }")
-    
+
     HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
     if [ "$HTTP_CODE" = "200" ]; then
-        echo -e "${GREEN}✅ Test email sent successfully!${NC}"
+        echo -e "${GREEN}Test email sent successfully!${NC}"
         echo "   Check your inbox at: ${EMAILJS_RECIPIENT}"
     else
         echo -e "${RED}❌ Failed to send email. HTTP Code: ${HTTP_CODE}${NC}"
@@ -190,10 +181,10 @@ fi
 
 # Step 6: Show summary of generated files
 echo -e "\n${GREEN}========================================="
-echo "✅ Local test completed successfully!"
+echo "Local test completed successfully!"
 echo "=========================================${NC}"
 echo ""
-echo "📊 Generated files in build/ directory:"
+echo "Generated files in build/ directory:"
 ls -lh build/*.html build/*.xml build/*.json 2>/dev/null || echo "   No generated files found"
 echo ""
 echo "📁 Build directory contents:"
